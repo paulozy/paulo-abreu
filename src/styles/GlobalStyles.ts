@@ -4,6 +4,7 @@ export const GlobalStyles = createGlobalStyle`
 
 :root {
   --bg-gray-800: #2f3542;
+  --bg-gray-900: #1c1c1c;
 
   --white: #fff;
 
@@ -35,6 +36,7 @@ export const GlobalStyles = createGlobalStyle`
 
 body {
   -webkit-font-smoothing: antialiased;
+  background-color: #1c1c1c;
 }
 
 body,

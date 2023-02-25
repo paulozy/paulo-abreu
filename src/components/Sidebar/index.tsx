@@ -1,8 +1,8 @@
 import { SearchBar, SidebarContainer, SidebarContent } from './styles'
 // import { FaSearch } from 'react-icons/fa'
 
-import avatar from '../../assets/avatar.png'
 import { ChangeEventHandler } from 'react'
+import avatar from '../../assets/avatar.png'
 
 interface SidebarProps {
   onSearch: ChangeEventHandler
@@ -39,7 +39,6 @@ export function Sidebar({ onSearch }: SidebarProps) {
             placeholder="Pesquise por repositório"
             onChange={onSearch}
           />
-          {/* <FaSearch /> */}
         </SearchBar>
       </SidebarContent>
     </SidebarContainer>

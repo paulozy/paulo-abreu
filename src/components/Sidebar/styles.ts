@@ -9,6 +9,8 @@ export const SidebarContainer = styled.div`
   } */
 `
 export const SidebarContent = styled.aside`
+  z-index: 1;
+
   background: var(--bg-gray-800);
 
   border-radius: 0.5rem;
@@ -33,28 +35,27 @@ export const SidebarContent = styled.aside`
 
     strong {
       margin-top: 1rem;
-      color: var(--purple-100);
+      color: var(--white);
       line-height: 1.6;
     }
 
     span {
       font-size: 0.875rem;
       line-height: 1.6rem;
-      color: var(--purple-200);
+      color: var(--white);
     }
   }
 
   footer {
-    border-top: 1px solid var(--purple-300);
     margin: 1.5rem 0;
     padding: 1.5rem 2rem 2rem 2rem;
 
     a {
-      background: transparent;
+      background: var(--bg-gray-800);
+      filter: brightness(0.8);
 
-      color: var(--purple-100);
+      color: var(--white);
 
-      border: 1px solid var(--purple-300);
       border-radius: 0.5rem;
 
       height: 3.125rem;
@@ -75,6 +76,8 @@ export const SidebarContent = styled.aside`
 `
 
 export const SearchBar = styled.div`
+  position: sticky;
+
   background: var(--gray-800);
 
   margin-top: 1rem;
@@ -85,11 +88,11 @@ export const SearchBar = styled.div`
   align-items: center;
   gap: 0.25rem;
 
-  border-top: 5px solid var(--white);
+  border-top: 5px solid var(--bg-gray-900);
 
   padding-right: 0.75rem;
 
-  color: var(--purple-800);
+  color: var(--white);
 
   input {
     width: 100%;
@@ -101,6 +104,6 @@ export const SearchBar = styled.div`
     background: transparent;
 
     outline: none;
-    color: var(--purple-100);
+    color: var(--white);
   }
 `

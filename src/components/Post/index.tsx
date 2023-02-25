@@ -1,9 +1,8 @@
-import { PostContainer, PostContent } from './styles'
-import { FaChevronDown, FaChevronUp, FaGithub } from 'react-icons/fa'
-import { MdOutlineWebAsset } from 'react-icons/md'
 import { format } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
-import { useState } from 'react'
+import { FaGithub } from 'react-icons/fa'
+import { MdOutlineWebAsset } from 'react-icons/md'
+import { PostContainer, PostContent } from './styles'
 
 interface PostProps {
   appUrl: string
@@ -30,67 +29,47 @@ export function Post({
     locale: ptBR,
   })
 
-  const [isContentVisible, setIsContentVisible] = useState(false)
-
-  function handleChangeVisibleContent() {
-    setIsContentVisible(!isContentVisible)
-  }
-
   return (
     <PostContainer>
       <header>
-        <div>
-          <span>{type}</span>
-          <span>{dateFormatted}</span>
-        </div>
-
-        <div>
-          <h1>{title}</h1>
-
-          <div>
-            <button onClick={handleChangeVisibleContent}>
-              {isContentVisible ? <FaChevronUp /> : <FaChevronDown />}
-            </button>
-          </div>
-        </div>
+        <h1>{title}</h1>
+        <span>{dateFormatted}</span>
       </header>
 
-      {isContentVisible && (
-        <PostContent>
-          <h4>Descrição</h4>
-          <p>{description}</p>
+      <PostContent>
+        <h4>Descrição</h4>
+        <p>{description}</p>
 
-          <div>
-            {videoId ? (
-              <>
-                <iframe
-                  width="100%"
-                  height="315"
-                  src={`https://www.youtube.com/embed/${videoId}`}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </>
-            ) : (
-              <img src={heroImageUrl} alt="" />
-            )}
-          </div>
+        <div>
+          {videoId ? (
+            <>
+              <iframe
+                width="100%"
+                height="315"
+                src={`https://www.youtube.com/embed/${videoId}`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </>
+          ) : (
+            <img src={heroImageUrl} alt="" />
+          )}
+        </div>
 
-          <footer>
-            <a href={repositoryUrl} target="_blank" rel="noreferrer">
-              <FaGithub size={24} />
-              Repositório
-            </a>
+        <footer>
+          <a href={repositoryUrl} target="_blank" rel="noreferrer">
+            <FaGithub size={24} />
+            Repositório
+          </a>
 
-            <a href={appUrl} target="_blank" rel="noreferrer">
-              <MdOutlineWebAsset size={24} />
-              Site
-            </a>
-          </footer>
-        </PostContent>
-      )}
+          <a href={appUrl} target="_blank" rel="noreferrer">
+            <MdOutlineWebAsset size={24} />
+            Site
+          </a>
+        </footer>
+      </PostContent>
     </PostContainer>
   )
 }

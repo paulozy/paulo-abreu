@@ -10,6 +10,7 @@ import { AppContainer, AppContent } from './styles/styles'
 const GET_POSTS_QUERY = gql`
   query {
     posts(orderBy: publishedAt_DESC) {
+      id
       appUrl
       description
       title
@@ -32,7 +33,7 @@ export function App() {
     const searchLowerCased = event.target.value.toLowerCase()
 
     const posts = data?.posts.filter((post) =>
-      post.title.toLowerCase().includes(searchLowerCased),
+      post.title.toLowerCase().includes(searchLowerCased)
     )
 
     posts ? setSearchedPosts(posts) : setSearchedPosts([])
@@ -46,31 +47,31 @@ export function App() {
         <AppContent>
           {searchedPosts.length > 0
             ? searchedPosts.map((post) => (
-              <Post
-                key={post.id}
-                appUrl={post.appUrl}
-                description={post.description}
-                title={post.title}
-                type={post.type}
-                videoId={post?.videoId}
-                createdAt={post.createdAt}
-                heroImageUrl={post.heroImage?.url}
-                repositoryUrl={post.repositoryUrl}
-              />
-            ))
+                <Post
+                  key={post.id}
+                  appUrl={post.appUrl}
+                  description={post.description}
+                  title={post.title}
+                  type={post.type}
+                  videoId={post?.videoId}
+                  createdAt={post.createdAt}
+                  heroImageUrl={post.heroImage?.url}
+                  repositoryUrl={post.repositoryUrl}
+                />
+              ))
             : data?.posts.map((post) => (
-              <Post
-                key={post.id}
-                appUrl={post.appUrl}
-                description={post.description}
-                title={post.title}
-                type={post.type}
-                videoId={post?.videoId}
-                createdAt={post.createdAt}
-                heroImageUrl={post.heroImage?.url}
-                repositoryUrl={post.repositoryUrl}
-              />
-            ))}
+                <Post
+                  key={post.id}
+                  appUrl={post.appUrl}
+                  description={post.description}
+                  title={post.title}
+                  type={post.type}
+                  videoId={post?.videoId}
+                  createdAt={post.createdAt}
+                  heroImageUrl={post.heroImage?.url}
+                  repositoryUrl={post.repositoryUrl}
+                />
+              ))}
         </AppContent>
       </AppContainer>
 

@@ -7,11 +7,11 @@ export const PostContainer = styled.div`
   margin-bottom: 1.25rem;
 
   border-radius: 0.5rem;
-  color: var(--purple-100);
+  color: var(--white);
 
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+  --tw-shadow-colored: 0white -12px var(--tw-shadow-color);
+  box-shadowwhite(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 
   animation: entrance 0.5s ease-in-out;
@@ -27,71 +27,17 @@ export const PostContainer = styled.div`
   }
 
   header {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    div:first-child {
-      margin-bottom: 2.5rem;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-
-      span:first-child {
-        background: var(--purple-800);
-        padding: 0.5rem 1.5rem;
-
-        border-radius: 0.5rem;
-      }
-
-      span:last-child {
-        font-weight: 500;
-        font-size: 0.75rem;
-        line-height: 1rem;
-      }
-    }
-
-    div:last-child {
-      display: flex;
-      flex-direction: column;
-
-      h1 {
+    h1 {
       font-size: 1.5rem;
-      line-height: 2rem;
-
-      @media (max-width: 768px) {
-      font-size: 1.5rem/* 36px */;
-      line-height: 2.5rem/* 40px */;/
-      }
     }
 
-    div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      button {
-        margin-top: 2rem;
-
-        width: 15rem;
-
-        border: 0;
-        background: transparent;
-
-        padding: .7rem;
-        border-radius: 0.5rem;
-
-        color: var(--purple-100);
-        cursor: pointer;
-
-        transition: scale 0.4s;
-
-        &:hover {
-          scale: 1.1;
-        }
-      }
-    }
+    span {
+      display: block;
+      font-weight: 500;
     }
   }
 
@@ -101,7 +47,9 @@ export const PostContainer = styled.div`
 `
 
 export const PostContent = styled.div`
-  color: var(--purple-100);
+  margin-top: 2rem;
+
+  color: var(--white);
   font-weight: 700;
 
   animation: entrance 0.5s ease-in-out;
@@ -147,7 +95,7 @@ export const PostContent = styled.div`
     align-items: center;
 
     a {
-      color: var(--purple-100);
+      color: var(--white);
 
       text-decoration: solid underline;
       display: flex;

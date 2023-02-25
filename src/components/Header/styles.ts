@@ -9,6 +9,8 @@ export const HeaderContainer = styled.header`
   gap: 1rem;
   padding: 1.25rem 0;
 
+  z-index: 1;
+
   position: sticky;
   top: 0;
 
@@ -20,6 +22,6 @@ export const HeaderContainer = styled.header`
     font-size: 1.125rem;
     font-weight: 700;
     line-height: 1.75rem;
-    color: var(--purple-100);
+    color: var(--white);
   }
 `
